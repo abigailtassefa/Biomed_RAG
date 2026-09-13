@@ -12,6 +12,36 @@ from torch import embedding
 load_dotenv()
 
 
+REQUIRED_ENV_VARIABLES = (
+    "NEO4J_URI",
+    "NEO4J_USERNAME",
+    "NEO4J_PASSWORD",
+    "NEO4J_DATABASE",
+    "GEMINI_API_KEY",
+)
+
+
+def validate_environment():
+    missing_variables = [
+        variable
+        for variable in REQUIRED_ENV_VARIABLES
+        if not os.getenv(variable, "").strip()
+    ]
+
+    if missing_variables:
+        missing_names = ", ".join(missing_variables)
+
+        raise RuntimeError(
+            "Missing required environment variables: "
+            f"{missing_names}. "
+            "Copy .env.example to .env and provide the required values."
+        )
+
+
+validate_environment()
+
+
+
 app = Flask(__name__)
 
 
@@ -47,12 +77,12 @@ def graph_rag(question):
 
 
     symptom_query = """
-         CALL db.index.vector.queryNodes(
-    'symptom_embeddings',
-    3,
-    $embedding
-)
-YIELD node, score
+         MATCH (node:Symptom)
+SEARCH node IN (
+    VECTOR INDEX symptom_embeddings
+    FOR $embedding
+    LIMIT 3
+) SCORE AS score
 
 OPTIONAL MATCH (d:Disease)-[:HAS_SYMPTOM]->(node)
 OPTIONAL MATCH (drug:Drug)-[:TREATS]->(d)
@@ -70,12 +100,12 @@ RETURN
 
 
     disease_query = """
-CALL db.index.vector.queryNodes(
-    'disease_embeddings',
-    3,
-    $embedding
-)
-YIELD node, score
+MATCH (node:Disease)
+SEARCH node IN (
+    VECTOR INDEX disease_embeddings
+    FOR $embedding
+    LIMIT 3
+) SCORE AS score
 
 OPTIONAL MATCH (node)-[:HAS_SYMPTOM]->(symptom:Symptom)
 OPTIONAL MATCH (drug:Drug)-[:TREATS]->(node)
@@ -93,15 +123,16 @@ RETURN
 
 
     drug_query = """
-CALL db.index.vector.queryNodes(
-    'drug_embeddings',
-    3,
-    $embedding
-)
-YIELD node, score
+MATCH (node:Drug)
+SEARCH node IN (
+    VECTOR INDEX drug_embeddings
+    FOR $embedding
+    LIMIT 3
+) SCORE AS score
 
 OPTIONAL MATCH (node)-[:TREATS]->(d:Disease)
 OPTIONAL MATCH (d)-[:HAS_SYMPTOM]->(symptom:Symptom)
+
 
 RETURN
     'Drug' AS match_type,

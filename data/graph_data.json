@@ -1,0 +1,880 @@
+{
+  "nodes": [
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:0",
+      "labels": [
+        "Patient"
+      ],
+      "properties": {
+        "PatientID": "P001",
+        "Age": 28,
+        "Name": "Alice Johnson"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:1",
+      "labels": [
+        "Patient"
+      ],
+      "properties": {
+        "PatientID": "P002",
+        "Age": 45,
+        "Name": "Brian Smith"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:10",
+      "labels": [
+        "Disease"
+      ],
+      "properties": {
+        "Category": "Infectious",
+        "DiseaseID": "D001",
+        "Name": "Influenza"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:11",
+      "labels": [
+        "Disease"
+      ],
+      "properties": {
+        "Category": "Metabolic",
+        "DiseaseID": "D002",
+        "Name": "Type 2 Diabetes"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:12",
+      "labels": [
+        "Disease"
+      ],
+      "properties": {
+        "Category": "Cardiovascular",
+        "DiseaseID": "D003",
+        "Name": "Hypertension"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:13",
+      "labels": [
+        "Disease"
+      ],
+      "properties": {
+        "Category": "Autoimmune",
+        "DiseaseID": "D004",
+        "Name": "Rheumatoid Arthritis"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:14",
+      "labels": [
+        "Disease"
+      ],
+      "properties": {
+        "Category": "Respiratory",
+        "DiseaseID": "D005",
+        "Name": "Asthma"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:15",
+      "labels": [
+        "Disease"
+      ],
+      "properties": {
+        "Category": "Neurological",
+        "DiseaseID": "D006",
+        "Name": "Migraine"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:16",
+      "labels": [
+        "Disease"
+      ],
+      "properties": {
+        "Category": "Neoplastic",
+        "DiseaseID": "D007",
+        "Name": "Breast Cancer"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:17",
+      "labels": [
+        "Disease"
+      ],
+      "properties": {
+        "Category": "Genetic",
+        "DiseaseID": "D008",
+        "Name": "Cystic Fibrosis"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:18",
+      "labels": [
+        "Symptom"
+      ],
+      "properties": {
+        "SymptomID": "S001",
+        "Name": "Fever"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:19",
+      "labels": [
+        "Symptom"
+      ],
+      "properties": {
+        "SymptomID": "S002",
+        "Name": "Cough"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:2",
+      "labels": [
+        "Patient"
+      ],
+      "properties": {
+        "PatientID": "P003",
+        "Age": 36,
+        "Name": "Chloe Davis"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:20",
+      "labels": [
+        "Symptom"
+      ],
+      "properties": {
+        "SymptomID": "S003",
+        "Name": "Fatigue"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:21",
+      "labels": [
+        "Symptom"
+      ],
+      "properties": {
+        "SymptomID": "S004",
+        "Name": "Joint Pain"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:22",
+      "labels": [
+        "Symptom"
+      ],
+      "properties": {
+        "SymptomID": "S005",
+        "Name": "High Blood Sugar"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:23",
+      "labels": [
+        "Symptom"
+      ],
+      "properties": {
+        "SymptomID": "S006",
+        "Name": "Shortness of Breath"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:24",
+      "labels": [
+        "Symptom"
+      ],
+      "properties": {
+        "SymptomID": "S007",
+        "Name": "Headache"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:25",
+      "labels": [
+        "Symptom"
+      ],
+      "properties": {
+        "SymptomID": "S008",
+        "Name": "Chest Tightness"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:26",
+      "labels": [
+        "Symptom"
+      ],
+      "properties": {
+        "SymptomID": "S009",
+        "Name": "Weight Loss"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:27",
+      "labels": [
+        "Symptom"
+      ],
+      "properties": {
+        "SymptomID": "S010",
+        "Name": "Thick Mucus"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:28",
+      "labels": [
+        "Drug"
+      ],
+      "properties": {
+        "Dosage": "75 mg",
+        "DrugID": "DR001",
+        "Name": "Oseltamivir"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:29",
+      "labels": [
+        "Drug"
+      ],
+      "properties": {
+        "Dosage": "500 mg",
+        "DrugID": "DR002",
+        "Name": "Metformin"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:3",
+      "labels": [
+        "Patient"
+      ],
+      "properties": {
+        "PatientID": "P004",
+        "Age": 52,
+        "Name": "Daniel Kim"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:30",
+      "labels": [
+        "Drug"
+      ],
+      "properties": {
+        "Dosage": "10 mg",
+        "DrugID": "DR003",
+        "Name": "Lisinopril"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:31",
+      "labels": [
+        "Drug"
+      ],
+      "properties": {
+        "Dosage": "15 mg",
+        "DrugID": "DR004",
+        "Name": "Methotrexate"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:32",
+      "labels": [
+        "Drug"
+      ],
+      "properties": {
+        "Dosage": "2 puffs",
+        "DrugID": "DR005",
+        "Name": "Albuterol"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:33",
+      "labels": [
+        "Drug"
+      ],
+      "properties": {
+        "Dosage": "50 mg",
+        "DrugID": "DR006",
+        "Name": "Sumatriptan"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:34",
+      "labels": [
+        "Drug"
+      ],
+      "properties": {
+        "Dosage": "20 mg",
+        "DrugID": "DR007",
+        "Name": "Tamoxifen"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:35",
+      "labels": [
+        "Drug"
+      ],
+      "properties": {
+        "Dosage": "150 mg",
+        "DrugID": "DR008",
+        "Name": "Ivacaftor"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:36",
+      "labels": [
+        "DrugRating"
+      ],
+      "properties": {
+        "RatingID": "R001",
+        "Rating": 9,
+        "DateRated": "2026-06-01"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:37",
+      "labels": [
+        "DrugRating"
+      ],
+      "properties": {
+        "RatingID": "R002",
+        "Rating": 8,
+        "DateRated": "2026-06-05"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:38",
+      "labels": [
+        "DrugRating"
+      ],
+      "properties": {
+        "RatingID": "R003",
+        "Rating": 7,
+        "DateRated": "2026-06-10"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:39",
+      "labels": [
+        "DrugRating"
+      ],
+      "properties": {
+        "RatingID": "R004",
+        "Rating": 10,
+        "DateRated": "2026-06-12"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:4",
+      "labels": [
+        "Patient"
+      ],
+      "properties": {
+        "PatientID": "P005",
+        "Age": 19,
+        "Name": "Emma Brown"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:40",
+      "labels": [
+        "DrugRating"
+      ],
+      "properties": {
+        "RatingID": "R005",
+        "Rating": 8,
+        "DateRated": "2026-06-18"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:41",
+      "labels": [
+        "DrugRating"
+      ],
+      "properties": {
+        "RatingID": "R006",
+        "Rating": 6,
+        "DateRated": "2026-06-20"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:42",
+      "labels": [
+        "DrugRating"
+      ],
+      "properties": {
+        "RatingID": "R007",
+        "Rating": 9,
+        "DateRated": "2026-06-25"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:43",
+      "labels": [
+        "DrugRating"
+      ],
+      "properties": {
+        "RatingID": "R008",
+        "Rating": 10,
+        "DateRated": "2026-06-30"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:44",
+      "labels": [
+        "DrugRating"
+      ],
+      "properties": {
+        "RatingID": "R009",
+        "Rating": 7,
+        "DateRated": "2026-07-02"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:45",
+      "labels": [
+        "DrugRating"
+      ],
+      "properties": {
+        "RatingID": "R010",
+        "Rating": 8,
+        "DateRated": "2026-07-08"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:5",
+      "labels": [
+        "Patient"
+      ],
+      "properties": {
+        "PatientID": "P006",
+        "Age": 61,
+        "Name": "Farah Ahmed"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:6",
+      "labels": [
+        "Patient"
+      ],
+      "properties": {
+        "PatientID": "P007",
+        "Age": 33,
+        "Name": "Gabriel Lee"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:7",
+      "labels": [
+        "Patient"
+      ],
+      "properties": {
+        "PatientID": "P008",
+        "Age": 40,
+        "Name": "Hannah Wilson"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:8",
+      "labels": [
+        "Patient"
+      ],
+      "properties": {
+        "PatientID": "P009",
+        "Age": 26,
+        "Name": "Isaac Moore"
+      }
+    },
+    {
+      "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:9",
+      "labels": [
+        "Patient"
+      ],
+      "properties": {
+        "PatientID": "P010",
+        "Age": 55,
+        "Name": "Julia Clark"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:0",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:10",
+      "type": "HAS_DISEASE",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:0",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:28",
+      "type": "TAKES",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:0",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:36",
+      "type": "RATED",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:1",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:11",
+      "type": "HAS_DISEASE",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:1",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:29",
+      "type": "TAKES",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:1",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:37",
+      "type": "RATED",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:10",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:18",
+      "type": "HAS_SYMPTOM",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:10",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:19",
+      "type": "HAS_SYMPTOM",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:10",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:20",
+      "type": "HAS_SYMPTOM",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:11",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:20",
+      "type": "HAS_SYMPTOM",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:11",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:22",
+      "type": "HAS_SYMPTOM",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:12",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:20",
+      "type": "HAS_SYMPTOM",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:13",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:20",
+      "type": "HAS_SYMPTOM",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:13",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:21",
+      "type": "HAS_SYMPTOM",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:14",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:23",
+      "type": "HAS_SYMPTOM",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:14",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:25",
+      "type": "HAS_SYMPTOM",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:15",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:24",
+      "type": "HAS_SYMPTOM",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:16",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:20",
+      "type": "HAS_SYMPTOM",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:16",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:26",
+      "type": "HAS_SYMPTOM",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:17",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:23",
+      "type": "HAS_SYMPTOM",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:17",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:27",
+      "type": "HAS_SYMPTOM",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:2",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:13",
+      "type": "HAS_DISEASE",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:2",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:31",
+      "type": "TAKES",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:2",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:38",
+      "type": "RATED",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:28",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:10",
+      "type": "TREATS",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:29",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:11",
+      "type": "TREATS",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:3",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:12",
+      "type": "HAS_DISEASE",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:3",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:30",
+      "type": "TAKES",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:3",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:39",
+      "type": "RATED",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:30",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:12",
+      "type": "TREATS",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:31",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:13",
+      "type": "TREATS",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:32",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:14",
+      "type": "TREATS",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:33",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:15",
+      "type": "TREATS",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:34",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:16",
+      "type": "TREATS",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:35",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:17",
+      "type": "TREATS",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:36",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:28",
+      "type": "BELONGS_TO",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:37",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:29",
+      "type": "BELONGS_TO",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:38",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:31",
+      "type": "BELONGS_TO",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:39",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:30",
+      "type": "BELONGS_TO",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:4",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:14",
+      "type": "HAS_DISEASE",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:4",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:32",
+      "type": "TAKES",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:4",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:40",
+      "type": "RATED",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:40",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:32",
+      "type": "BELONGS_TO",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:41",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:34",
+      "type": "BELONGS_TO",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:42",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:33",
+      "type": "BELONGS_TO",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:43",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:30",
+      "type": "BELONGS_TO",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:44",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:28",
+      "type": "BELONGS_TO",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:45",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:35",
+      "type": "BELONGS_TO",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:5",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:16",
+      "type": "HAS_DISEASE",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:5",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:34",
+      "type": "TAKES",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:5",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:41",
+      "type": "RATED",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:6",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:15",
+      "type": "HAS_DISEASE",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:6",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:33",
+      "type": "TAKES",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:6",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:42",
+      "type": "RATED",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:7",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:12",
+      "type": "HAS_DISEASE",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:7",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:30",
+      "type": "TAKES",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:7",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:43",
+      "type": "RATED",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:8",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:10",
+      "type": "HAS_DISEASE",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:8",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:28",
+      "type": "TAKES",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:8",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:44",
+      "type": "RATED",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:9",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:17",
+      "type": "HAS_DISEASE",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:9",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:35",
+      "type": "TAKES",
+      "properties": {}
+    },
+    {
+      "start_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:9",
+      "end_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:45",
+      "type": "RATED",
+      "properties": {}
+    }
+  ]
+}
