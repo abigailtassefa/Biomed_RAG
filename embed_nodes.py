@@ -58,7 +58,7 @@ def get_drugs():
 
     with driver.session(database=DATABASE) as session:
         return list(session.run(query))
-    
+
 def save_drug_embedding(drug_name, embedding):
 
     query = """
@@ -160,34 +160,40 @@ def create_symptom_embeddings():
             embedding
         )
 
-        print(record["symptom"], "saved")
+        print(record["symptom"], "saved")  
 
-def main():
+
+def create_disease_embeddings():
 
     records = get_diseases()
-    create_symptom_embeddings()
-    create_drug_embeddings()
 
     for record in records:
 
-       disease_text = f"""
-       Disease: {record['disease']}.
-       Category: {record['category']}.
-       Symptoms: {", ".join(record['symptoms'])}.
-       Treatment: {", ".join(record['drugs'])}.
-       """
+        disease_text = f"""
+        Disease: {record['disease']}.
+        Category: {record['category']}.
+        Symptoms: {", ".join(record['symptoms'])}.
+        Treatment: {", ".join(record['drugs'])}.
+        """
 
-       embedding = model.encode(disease_text)
+        embedding = model.encode(disease_text)
 
-       save_embedding(
-          record["disease"],
-          embedding
+        save_embedding(
+            record["disease"],
+            embedding
         )
 
-       print(
-         record["disease"],
-         "embedding saved"
-      )
+        print(
+            record["disease"],
+            "embedding saved"
+        )
+
+
+def main():
+    create_disease_embeddings()
+    create_symptom_embeddings()
+    create_drug_embeddings()
+
 if __name__ == "__main__":
     main()
     driver.close()

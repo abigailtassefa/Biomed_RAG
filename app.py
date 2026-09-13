@@ -3,8 +3,11 @@ from neo4j import GraphDatabase
 from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
 from google import genai
+from neo4j.exceptions import DriverError, Neo4jError
+from google.genai import errors as genai_errors
 import os
 
+from torch import embedding
 
 load_dotenv()
 
@@ -37,83 +40,159 @@ client = genai.Client(
 )
 
 
-
 def graph_rag(question):
-
     embedding = embedding_model.encode(
         question
     ).tolist()
 
 
-    query = """
+    symptom_query = """
+         CALL db.index.vector.queryNodes(
+    'symptom_embeddings',
+    3,
+    $embedding
+)
+YIELD node, score
 
-    CALL db.index.vector.queryNodes(
-        'symptom_embeddings',
-        1,
-        $embedding
-    )
-    YIELD node, score
+OPTIONAL MATCH (d:Disease)-[:HAS_SYMPTOM]->(node)
+OPTIONAL MATCH (drug:Drug)-[:TREATS]->(d)
+
+RETURN
+    'Symptom' AS match_type,
+    node.Name AS matched_name,
+    node.Name AS symptom,
+    d.Name AS disease,
+    d.Category AS category,
+    drug.Name AS drug,
+    drug.Dosage AS dosage,
+    score
+"""
 
 
-    MATCH (d:Disease)-[:HAS_SYMPTOM]->(node)
+    disease_query = """
+CALL db.index.vector.queryNodes(
+    'disease_embeddings',
+    3,
+    $embedding
+)
+YIELD node, score
 
-    MATCH (drug:Drug)-[:TREATS]->(d)
+OPTIONAL MATCH (node)-[:HAS_SYMPTOM]->(symptom:Symptom)
+OPTIONAL MATCH (drug:Drug)-[:TREATS]->(node)
+
+RETURN
+    'Disease' AS match_type,
+    node.Name AS matched_name,
+    symptom.Name AS symptom,
+    node.Name AS disease,
+    node.Category AS category,
+    drug.Name AS drug,
+    drug.Dosage AS dosage,
+    score
+"""
 
 
-    RETURN
-        node.Name AS symptom,
-        d.Name AS disease,
-        drug.Name AS drug,
-        drug.Dosage AS dosage
+    drug_query = """
+CALL db.index.vector.queryNodes(
+    'drug_embeddings',
+    3,
+    $embedding
+)
+YIELD node, score
 
-    """
+OPTIONAL MATCH (node)-[:TREATS]->(d:Disease)
+OPTIONAL MATCH (d)-[:HAS_SYMPTOM]->(symptom:Symptom)
+
+RETURN
+    'Drug' AS match_type,
+    node.Name AS matched_name,
+    symptom.Name AS symptom,
+    d.Name AS disease,
+    d.Category AS category,
+    node.Name AS drug,
+    node.Dosage AS dosage,
+    score
+"""
 
 
-    context = ""
-
+    records = []
 
     with driver.session(database=DATABASE) as session:
-
-        result = session.run(
-            query,
-            embedding=embedding
-        )
-
-
-        for r in result:
-
-            context += f"""
-            Symptom: {r['symptom']}
-            Disease: {r['disease']}
-            Drug: {r['drug']}
-            Dosage: {r['dosage']}
-            """
-
-
-
-    prompt = f"""
-
-    Answer using only this biomedical graph information.
-
-    Question:
-    {question}
-
-
-    Context:
-    {context}
-
-    """
-
-
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt
+         symptom_results = session.run(
+        symptom_query,
+        embedding=embedding
     )
 
+         records.extend(list(symptom_results))
 
+         disease_results = session.run(
+        disease_query,
+        embedding=embedding
+    )
+
+         records.extend(list(disease_results))
+
+         drug_results = session.run(
+        drug_query,
+        embedding=embedding
+    )
+
+         records.extend(list(drug_results))
+    
+    if not records:
+        return (
+            "I could not find enough information in the biomedical "
+            "knowledge graph to answer that question."
+        )
+    records.sort(
+    key=lambda record: record["score"],
+    reverse=True
+     )
+    context_parts = []
+
+    for record in records:
+        context_parts.append(
+            f"""
+        Matched node type: {record["match_type"]}
+        Matched node name: {record["matched_name"]}
+        Symptom: {record["symptom"] or "Not available"}
+        Disease: {record["disease"] or "Not available"}
+        Category: {record["category"] or "Not available"}
+        Drug: {record["drug"] or "Not available"}
+        Dosage: {record["dosage"] or "Not available"}
+        Similarity score: {record["score"]:.3f}
+        """
+        )
+
+    context = "\n".join(context_parts)
+
+    prompt = f"""
+You are a biomedical knowledge graph assistant.
+
+Answer the question using ONLY the information in the
+Biomedical Graph Context below.
+
+Rules:
+1. Do not use outside knowledge.
+2. Do not guess or invent diseases, drugs, or dosages.
+3. If the context is missing the information needed to answer,
+   say: "The biomedical knowledge graph does not provide enough
+   information to answer this question."
+4. Clearly state when a disease, drug, or dosage is not available.
+5. Keep the answer clear and concise.
+
+User question:
+{question}
+
+Biomedical Graph Context:
+{context}
+"""
+
+    response = client.models.generate_content(
+        model="gemini-3.6-flash",
+        contents=prompt
+    )
     return response.text
-
-
 
 @app.route("/")
 def home():
@@ -123,28 +202,58 @@ def home():
     )
 
 
-
 @app.route("/ask", methods=["POST"])
 def ask():
+    data = request.get_json(silent=True)
 
-    data = request.json
+    if not isinstance(data, dict):
+        return jsonify({
+            "error": "Request body must be valid JSON."
+        }), 400
 
-    question = data["question"]
+    question = data.get("question")
 
-    answer = graph_rag(question)
+    if not isinstance(question, str) or not question.strip():
+        return jsonify({
+            "error": "Please enter a question."
+        }), 400
 
+    try:
+        answer = graph_rag(question.strip())
 
-    return jsonify(
-        {
+        return jsonify({
             "answer": answer
-        }
-    )
-
+        })
+    except (DriverError, Neo4jError):
+        app.logger.exception("Neo4j request failed")
+        return jsonify({
+            "error": (
+                "The biomedical database is currently unavailable. "
+                "Please try again later."
+            )
+        }), 503
+    except genai_errors.APIError:
+        app.logger.exception("Gemini API request failed")
+        return jsonify({
+            "error": (
+                "The answer-generation service is currently unavailable. "
+                "Please try again later."
+            )
+        }), 502
+    except Exception:
+        app.logger.exception("Unexpected application error")
+        return jsonify({
+            "error": (
+                "An unexpected error occurred. "
+                "Please try again later."
+            )
+        }), 500
 
 
 if __name__ == "__main__":
 
-    app.run(
-        debug=True
-    )
+    app.run()
+
+
     
+
