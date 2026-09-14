@@ -33,6 +33,7 @@ def get_diseases():
 
     RETURN
         d.Name AS disease,
+        d.Aliases AS aliases,
         d.Category AS category,
         collect(DISTINCT s.Name) AS symptoms,
         collect(DISTINCT drug.Name) AS drugs
@@ -168,12 +169,14 @@ def create_disease_embeddings():
     records = get_diseases()
 
     for record in records:
+        aliases = record["aliases"] or []
 
         disease_text = f"""
         Disease: {record['disease']}.
         Category: {record['category']}.
         Symptoms: {", ".join(record['symptoms'])}.
         Treatment: {", ".join(record['drugs'])}.
+        Aliases: {", ".join(aliases)}.
         """
 
         embedding = model.encode(disease_text)

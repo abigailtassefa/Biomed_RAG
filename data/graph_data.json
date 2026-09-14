@@ -49,11 +49,14 @@
       "labels": [
         "Disease"
       ],
-      "properties": {
+     "properties": {
         "Category": "Cardiovascular",
-        "DiseaseID": "D003",
-        "Name": "Hypertension"
-      }
+       "DiseaseID": "D003",
+       "Name": "Hypertension",
+       "Aliases": [
+         "high blood pressure"
+         ]
+       }  
     },
     {
       "export_id": "4:e9a459ac-27a1-43ba-bd33-469b8e2afa90:13",
