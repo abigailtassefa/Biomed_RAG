@@ -32,17 +32,20 @@ with driver.session(database=DATABASE) as session:
 
     result = session.run(
         """
-        CALL db.index.vector.queryNodes(
-            'disease_embeddings',
-            3,
-            $embedding
-        )
-        YIELD node, score
+    
+MATCH (node:Disease)
+SEARCH node IN (
+    VECTOR INDEX disease_embeddings
+    FOR $embedding
+    LIMIT 3
+) SCORE AS score
 
-        RETURN 
-            node.Name AS disease,
-            node.Category AS category,
-            score
+RETURN
+    node.Name AS disease,
+    node.Category AS category,
+    score
+ORDER BY score DESC
+
         """,
         embedding=question_embedding
     )
